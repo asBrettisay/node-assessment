@@ -25,7 +25,7 @@ Be sure to use the correct method (GET, POST, PUT, or DELETE) and the correct pa
    `POST: /api/users/admin`
 
 6.  Change a user's language.
-   `POST: /api/users/` + userId
+   `POST: /api/users/language` + userId
 
 7.  Add to a users favorite forums. Use params to get a user by id.
    `POST: /api/users/forums/` + userId
