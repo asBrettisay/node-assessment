@@ -209,9 +209,9 @@ test('ban(delete) a user', async t => {
   res = await request(app)
     .get('/api/users/' + user.id)
 
-  t.is(res.status, 200);
+  t.is(res.status, 404, 'Make sure that when a user is not found that the server returns 404');
   t.truthy(res.body);
-  t.falsy(res.body[0]);
+  t.falsy(res.body[0], 'User still exists, delete endpoint is not working');
 
 })
 

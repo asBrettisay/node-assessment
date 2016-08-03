@@ -33,7 +33,7 @@ Be sure to use the correct method (GET, POST, PUT, or DELETE) and the correct pa
 8. Remove from a users favorite forums. Use delete method. Since delete cannot send data, use params to get a user by id, and query to get the forum to delete.
    `DELETE: /api/users/forums/` + userID + `?favorite=` + forum name.
 
-9.  Ban (delete) a user. Use method delete and params to delete a user by their id number.
+9.  Ban (delete) a user. Use method delete and params to delete a user by their id number. Make sure that a get request for a user that does not exists returns 404.
    `DELETE: /api/users/` + userID
 
 10. Change your get all users endpoint so that it uses queries. Allow queries for age, language, city, state, and gender.
