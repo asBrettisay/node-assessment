@@ -6,12 +6,13 @@ import users from './users.json';
 
 test('Get all users', async t=> {
   t.plan(2)
-  const req = await request(app)
+  const res = await request(app)
     .get('/api/users')
     .expect(200)
 
-  t.is(req.status, 200, 'Status is not 200');
-  t.truthy(req.body, 'Something is wrong with the response body')
+  t.is(res.status, 200, 'Status is not 200');
+  t.is(res.body[0], users[0], "No user returned");
+  t.truthy(res.body, 'Something is wrong with the response body');
 })
 
 test('Get user by language', async t => {
